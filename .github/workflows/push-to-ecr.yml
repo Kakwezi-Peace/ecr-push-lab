@@ -33,5 +33,9 @@ jobs:
           ECR_REPOSITORY: ecr-push-lab-repo
           IMAGE_TAG: kakwezi-peace_ecr-push-lab
         run: |
+          set -e
+          echo "Building Docker image..."
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+          echo "Pushing Docker image to ECR..."
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+          echo "Successfully pushed $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
