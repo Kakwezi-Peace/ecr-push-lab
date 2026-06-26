@@ -4,7 +4,7 @@ const PORT = process.env.PORT || 3000;
 
 app.get('/', (req, res) => {
   res.json({
-    message: 'Hello from Kakwezi Peace!',
+    message: 'Hello World from Kakwezi Peace!',
     app: 'ecr-push-lab',
     version: '1.0.0'
   });
